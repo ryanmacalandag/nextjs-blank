@@ -1,3 +1,18 @@
+## Blank NextJS App
+
+This is a Next.js default app modded to remove the unnecessary initial items and add essential files and components.
+
+- page.tsx - removed default home page items
+- /public - deleted image files in Public folder
+- /apps - added standard project folders
+- layout.tsx - removed Geist and added Inter as main font
+- global.css - added alert colors (info,success,warning,danger); text-xxs; tracking-widest
+- darkmode toggle added
+
+By Ryan Macalandag
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
