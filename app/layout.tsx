@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import AppProvider from "./_providers/AppProviderContext";
+import AppProvider from "../providers/AppProviderContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
+        {/* AppProvider houses all app provides under one roof. Global app context files found at @/providers */}
         <AppProvider>{children}</AppProvider>
       </body>
     </html>
