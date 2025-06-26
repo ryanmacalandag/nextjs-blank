@@ -1,16 +1,16 @@
-import InstallSuccess from "@/components/page/DeleteThisFolder/InstallSuccess";
-import PageWrapper from "@/components/wrapper/PageWrapper";
+import InstallSuccess from "@/installation/InstallSuccess";
+import DarkPageWrapper from "@/components/wrapper/DarkPageWrapper";
 import RowWrapper from "@/components/wrapper/RowWrapper";
 import SectionWrapper from "@/components/wrapper/SectionWrapper";
 
 export default function Home() {
   return (
-    <PageWrapper>
+    <DarkPageWrapper>
       <SectionWrapper>
         <RowWrapper>
           <InstallSuccess />
         </RowWrapper>
       </SectionWrapper>
-    </PageWrapper>
+    </DarkPageWrapper>
   );
 }

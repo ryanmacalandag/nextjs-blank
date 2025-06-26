@@ -1,26 +1,58 @@
 import React, { ReactNode } from "react";
 
-function getAlertVariantsClasses() {
-  const icon: string = "bg-background ";
-  const iconbg: string = "bg-success";
-  const bg: string = "bg-success/5";
-  const border: string = "border border-success/20";
+function getAlertVariantsClasses(variant: string) {
+  // loading default colors
+  const icon: string = "text-muted-foreground ";
+  const iconbg: string = "bg-muted-foreground/5 ";
+  const bg: string = "bg-muted-foreground/2 ";
+  const border: string = "border border-muted-foreground/7 ";
 
-  return { icon, iconbg, bg, border };
+  switch (variant) {
+    case "success":
+      return {
+        icon: "text-success ",
+        iconbg: "bg-success/10 ",
+        bg: "bg-success/5 ",
+        border: "border border-success/10 ",
+      };
+    case "info":
+      return {
+        icon: "text-info ",
+        iconbg: "bg-info/10 ",
+        bg: "bg-info/5 ",
+        border: "border border-info/10 ",
+      };
+    case "warning":
+      return {
+        icon: "text-warning ",
+        iconbg: "bg-warning/10 ",
+        bg: "bg-warning/5 ",
+        border: "border border-warning/10 ",
+      };
+    case "danger":
+      return {
+        icon: "text-danger ",
+        iconbg: "bg-danger/10 ",
+        bg: "bg-danger/5 ",
+        border: "border border-danger/10 ",
+      };
+    default:
+      return { icon, iconbg, bg, border };
+  }
 }
 
 export const AlertIcon: React.FC<{
   children: ReactNode;
   variant?: "success" | "info" | "warning" | "danger" | "muted";
-}> = ({ children }) => {
+}> = ({ children, variant = "muted" }) => {
   // retrieve classes for specified variant
-  const { icon, iconbg } = getAlertVariantsClasses();
+  const { icon, iconbg } = getAlertVariantsClasses(variant);
 
   return (
     <div
       className={`alert-icon 
         ${icon} ${iconbg} 
-        w-fit flex justify-center items-center text-xl text-background px-6 py-6`}
+        w-fit flex text-xl text-background px-6 py-6`}
     >
       {children}
     </div>
@@ -33,7 +65,7 @@ export const AlertMessage: React.FC<{
   return (
     <div
       className={`alert-message  
-        w-full h-full flex flex-wrap items-center gap-1 px-4 py-6`}
+        w-full flex flex-wrap items-center gap-x-1 pl-4 pr-8 py-4`}
     >
       {children}
     </div>
@@ -44,7 +76,7 @@ export const AlertTitle: React.FC<{
   children: ReactNode;
 }> = ({ children }) => {
   return (
-    <div className={`alert-title w-full text-2xl tracking-tighter font-bold`}>
+    <div className={`alert-title text-lg tracking-tighter font-bold`}>
       {children}
     </div>
   );
@@ -61,15 +93,15 @@ export const AlertDescription: React.FC<{
 const Alert: React.FC<{
   children: ReactNode;
   variant?: "success" | "info" | "warning" | "danger" | "muted";
-}> = ({ children }) => {
+}> = ({ children, variant = "muted" }) => {
   // retrieve classes for specified variant
-  const { bg, border } = getAlertVariantsClasses();
+  const { bg, border } = getAlertVariantsClasses(variant);
 
   return (
     <div
       className={`alert 
         ${bg} ${border}
-        w-fit flex items-stretch rounded-lg divide-x overflow-hidden`}
+        w-fit flex justify-stretch items-stretch rounded-lg overflow-hidden`}
     >
       {children}
     </div>

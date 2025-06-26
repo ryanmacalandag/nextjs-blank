@@ -1,10 +1,9 @@
 import React from "react";
 import { RiBardFill } from "react-icons/ri";
-import RowWrapper from "../../wrapper/RowWrapper";
+import RowWrapper from "../components/wrapper/RowWrapper";
 import Pill from "@/components/ui/Pill";
 import DarkModeToggle from "@/components/ui/PillDarkModeToggle";
 import { LuGithub, LuTriangle } from "react-icons/lu";
-import { Drawer } from "@/components/ui/drawer";
 import Alert, {
   AlertDescription,
   AlertIcon,
@@ -12,7 +11,7 @@ import Alert, {
   AlertTitle,
 } from "@/components/ui/Alert";
 
-const InstallSuccess = () => {
+function InstallSuccess() {
   return (
     <>
       <RowWrapper>
@@ -28,7 +27,6 @@ const InstallSuccess = () => {
           </AlertMessage>
         </Alert>
       </RowWrapper>
-      <Drawer></Drawer>
       <RowWrapper>
         <Pill
           href="https://vercel.com/import/git?s=https://github.com/ryanmacalandag/nextjs-blank"
@@ -48,6 +46,6 @@ const InstallSuccess = () => {
       </RowWrapper>
     </>
   );
-};
+}
 
 export default InstallSuccess;
