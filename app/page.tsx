@@ -1,16 +1,7 @@
-import InstallSuccess from "@/installation/InstallSuccess";
-import DarkPageWrapper from "@/components/wrapper/DarkPageWrapper";
-import RowWrapper from "@/components/wrapper/RowWrapper";
-import SectionWrapper from "@/components/wrapper/SectionWrapper";
-
 export default function Home() {
   return (
-    <DarkPageWrapper>
-      <SectionWrapper>
-        <RowWrapper>
-          <InstallSuccess />
-        </RowWrapper>
-      </SectionWrapper>
-    </DarkPageWrapper>
+    <div className="w-full h-dvh flex justify-center items-center px-4 py-6">
+      <h1 className="font-logo">Blank / Next.js</h1>
+    </div>
   );
 }

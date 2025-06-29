@@ -4,37 +4,20 @@ This is a modded Next.js default example project to remove the unnecessary initi
 
 Modifications: Ryan Macalandag
 Github repo: https://github.com/ryanmacalandag/nextjs-blank
-Usage: npx create-next-app@latest --example "https://nextjs.org/docs/app/api-reference/cli/create-next-app" [your-project-name]
+Usage: npx create-next-app@latest --example "https://github.com/ryanmacalandag/nextjs-blank" [your-project-name]
 
 Learn more: https://nextjs.org/docs/app/api-reference/cli/create-next-app
 
 ### App folder (@/app/)
 
 - page.tsx removed default home page items
-- layout.tsx - removed font Geist and added Inter (Google Font)
+- layout.tsx - removed font Geist and added Inter and Silkscreen(Google Font)
 - global.css - added a few minor custom classes to the Shadcn theme configuration
 - favicon.ico - added 😜 as favicon
-
-### Installation Folder (@/installation/)
-
-- holds temporary install files
-- InstallSuccess.txs replaces the default Next.js welcome message
-- DELETE this folder
 
 ### Public Folder (@/public/)
 
 - deleted image files in Public folder (eg vercel.svg, github.svg, etc)
-
-### Components Added (@/components/)
-
-- UI components: Alert, Pills
-- Wrappers: PageWrapper, DarkPageWrapper (dark-mode enabled), SectionWrapper, RowWrapper
-
-### Contexts/Providers Added (@/providers)
-
-- AppProviderContext.tsx is the catch-all provider for all top-level app providers
-- DarkModeContext.tsx wrapped to allow the dark mode toggle
-- ThemeProvider.tsx is a placeholder for theming
 
 ---
 

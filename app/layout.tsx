@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Silkscreen } from "next/font/google";
 import "./globals.css";
-import AppProvider from "../providers/AppProviderContext";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const silkscreen = Silkscreen({
+  variable: "--font-silkscreen",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -20,9 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
-        {/* AppProvider houses all app provides under one roof. Global app context files found at @/providers */}
-        <AppProvider>{children}</AppProvider>
+      <body className={`${inter.variable} ${silkscreen.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );
